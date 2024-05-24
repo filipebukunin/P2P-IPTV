@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P IPTV</title>
+    <style>
+        body {
+            background-image: url('https://th.bing.com/th/id/R.eba17213ca6bd9d18b56b7f04e51d100?rik=zmXtUlGOaCqNKA&riu=http%3a%2f%2f3.bp.blogspot.com%2f-IOflYVYUtm8%2fTcA0b88ffNI%2fAAAAAAAABbk%2ffbtII_JX9Cg%2fs1600%2fabstrato-tons-de-azul-imagens-imagem-de-fundo-wallpaper-para-pc-computador-tela-gratis-ambiente-de-trabalho.jpg&ehk=2hLThAcipipLwCRwatLCwpXvOssNFN%2bM562R9MnzxSo%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 100%;
+            background-color: #333;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .container {
+            width: auto;
+            margin: 10px;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 5px;
+        }
+
+        .content {
+            position: absolute;
+            left: 70px;
+            top: 0;
+            width: calc(100% - 70px);
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semi-transparente */
+            border-radius: 5px; /* Adiciona bordas arredondadas */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Adiciona uma sombra sutil */
+        }
+
+        .content h2 {
+            margin-bottom: 10px;
+            font-size: 24px; /* Define o tamanho da fonte para os títulos */
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 16px; /* Define o tamanho da fonte para o texto */
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="container">
+        <a href="#" onclick="loadContent('https://www.flashscore.com.br/')">
+            <img class="icon" src="https://webstockreview.net/images/television-clipart-tele-10.png" alt="Ícone 1">
+        </a>
+    </div>
+
+    <div class="container">
+        <a href="#" onclick="loadContent('URL2')">
+            <img class="icon" src="URL_ÍCONE2" alt="Ícone 2">
+        </a>
+    </div>
+
+    <div class="container">
+        <a href="#" onclick="loadContent('URL3')">
+            <img class="icon" src="URL_ÍCONE3" alt="Ícone 3">
+        </a>
+    </div>
+
+    <div class="container">
+        <a href="#" onclick="loadContent('URL4')">
+            <img class="icon" src="URL_ÍCONE4" alt="Ícone 4">
+        </a>
+    </div>
+</div>
+
+<div class="content" id="content">
+    <h2>Conteúdo inicial</h2>
+    <p>Este é o conteúdo inicial que será substituído ao clicar nos ícones.</p>
+</div>
+
+<script>
+    function loadContent(url) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("content").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+</script>
+
+</body>
+</html>
